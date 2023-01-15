@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(logger)
 
 const hostname = '127.0.0.1'
-const port = 3001
+const port = process.env.PORT || 3001
 
 let notas = [
   {
@@ -70,6 +70,6 @@ app.use((request, response) => {
   })
 })
 
-app.listen(port, hostname, () => {
+app.listen(port, () => {
   console.log(`Server executing in http://${hostname}:${port}/`)
 })
