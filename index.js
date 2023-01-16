@@ -18,21 +18,21 @@ let notas = [
     id: 1,
     content: 'delectus aut autem',
     date: new Date().toISOString,
+    important: false
+  },
+  {
+    id: 2,
+    content: 'Realizar un clone de duolingo',
+    date: new Date().toISOString,
     important: true
   },
   {
-    id: 1,
-    content: 'delectus aut autem',
+    id: 3,
+    content: 'Realizar un clone de tiktok',
     date: new Date().toISOString,
     important: true
   }
 ]
-
-// const server = http.createServer((request, response)=>{
-//     response.statusCode = 200
-//     response.setHeader('Content-Type','application/json')
-//     response.end(JSON.stringify(notas))
-// })
 
 app.get('/', (request, response) => {
   response.send('<h1>hello wordl</h1>')
