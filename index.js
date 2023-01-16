@@ -19,6 +19,12 @@ let notas = [
     content: 'delectus aut autem',
     date: new Date().toISOString,
     important: true
+  },
+  {
+    id: 1,
+    content: 'delectus aut autem',
+    date: new Date().toISOString,
+    important: true
   }
 ]
 
@@ -54,10 +60,10 @@ app.post('/api/note', (request, response) => {
   const ids = notas.map(el => el.id)
   const maxId = Math.max(...ids)
   const newNote = {
-    userId: note.userId,
     id: maxId + 1,
-    title: note.title,
-    completed: note.completed === undefined ? false : note.completed
+    content: note.content,
+    date: new Date().toISOString,
+    important: note.completed === undefined ? false : note.important
   }
 
   notas = [...notas, newNote]
